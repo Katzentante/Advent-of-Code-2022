@@ -1,10 +1,10 @@
 fn main() {
     let input = std::fs::read_to_string("./src/input6.txt").unwrap();
-    let signal = input.trim_end();
+    let signature = input.trim_end();
 
     let mut out = 0;
     let mut cache = [' '; 14];
-    for (i, c) in signal.chars().enumerate() {
+    for (i, c) in signature.chars().enumerate() {
         cache.rotate_left(1);
         cache[13] = c;
 
@@ -13,7 +13,7 @@ fn main() {
             break;
         }
     }
-    println!("{}", signal);
+    println!("{}", signature);
     println!("{:#?}\nPart 1: {}", cache, out);
 }
 
